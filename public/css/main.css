@@ -1,0 +1,91 @@
+
+h1{
+    font-family: 'Helvetica';
+    font-weight: bold;
+    font-size: 38px;
+}
+
+#message{
+    font-weight: bolder;
+    font-size: 18px;
+    color: #fff;
+}
+
+#forecast{
+    font-size: 30px;
+    font-weight: lighter;
+    color: #deeefb;
+}
+#probability{
+    font-size: 25px;
+    font-weight: normal;
+    font-style: italic;
+    color: #deeefb;
+}
+
+button{
+    border: 5px white;
+    background-color:#47c3ff;
+    cursor: pointer;
+    padding: 4px;
+    color:#000;
+}
+
+a{
+        font-family: 'Helvetica';
+        font-weight: lighter;
+        font-size: 25px;
+        color: #717171;
+        text-decoration: none;
+        transition: 0.3s;
+}
+nav a{
+    padding: left 0.5rem; 
+}
+
+.bg-perfect{
+    background: linear-gradient(7deg, #80ffed, #255ff0, #ff3aa1);
+    background-size: 600% 600%;
+    
+    -webkit-animation: gradient 22s ease infinite;
+    -moz-animation: gradient 22s ease infinite;
+    animation: gradient 22s ease infinite;
+    
+}
+
+a:hover{
+    color: #60b8ff;
+    font-size: 28px;
+}
+
+a:active{
+    font-size: 28px;
+}
+
+footer {
+    border-top: 1px solid #616060;
+}
+@-webkit-keyframes gradient {
+    0%{background-position:26% 0%}
+    50%{background-position:75% 100%}
+    100%{background-position:26% 0%}
+}
+@-moz-keyframes gradient {
+    0%{background-position:26% 0%}
+    50%{background-position:75% 100%}
+    100%{background-position:26% 0%}
+}
+@keyframes gradient {
+    0%{background-position:26% 0%}
+    50%{background-position:75% 100%}
+    100%{background-position:26% 0%}
+}
+
+@keyframes a_hover {
+    from {color: #717171; font-size: 25px;}
+    to {color: #60b8ff; font-size:28px;}
+  }
+  @keyframes a_active {
+    from {color: #60b8ff;}
+    to {color: #79c3ff;}
+  }
