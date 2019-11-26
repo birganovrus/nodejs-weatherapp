@@ -7,6 +7,7 @@ const forecast = require('../utils/forecast')
 
 
 const app = express()
+const port = process.env.PORT || 3000
 app.set('view engine','hbs')
 
 
@@ -57,6 +58,6 @@ app.get('*',(req,res) =>{
     })
 })
 
-app.listen(3000, () =>{
-    console.log(clk.green.inverse.bold('Server has started'))
+app.listen(port, () =>{
+    console.log(clk.green.inverse.bold('Server has started on port: ' + port))
 })
