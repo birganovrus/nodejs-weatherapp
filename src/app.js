@@ -4,6 +4,7 @@ const clk = require('chalk')
 const hbs = require('hbs')
 const geocode = require('../utils/geocode')
 const forecast = require('../utils/forecast')
+const imsearch = require('../utils/imagesearch')
 
 
 const app = express()
@@ -38,6 +39,10 @@ app.get('/weather',(req,res) =>{
                 if(!error){
                     res.send({
                         forecast: forecastData.summary,
+                        status: forecastData.status,
+                        wind: forecastData.wind + " km/h",
+                        temperature: forecastData.temperature + " °C.",
+                        humidity: forecastData.humidity * 100 + '%',
                         address: location,
                         probability: forecastData.rainProbability * 100 + '%'
                     })
@@ -50,6 +55,17 @@ app.get('/weather',(req,res) =>{
             else
             res.send({error})
         })
+})
+
+app.get('/usesearch',(req,res)=>{
+    imsearch(req.query.address,(error,data) =>{
+        if(!error){
+            res.send({
+                imurl: data.imageurl
+            })
+        }
+        else res.send({error})
+    }) 
 })
 
 app.get('*',(req,res) =>{

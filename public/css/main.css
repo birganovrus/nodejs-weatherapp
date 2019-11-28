@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
 h1{
     font-family: 'Helvetica';
     font-weight: bold;
@@ -23,6 +25,10 @@ h1{
     color: #deeefb;
 }
 
+#temperaturetext{
+    font-family: 'Montserrat', sans-serif;
+}
+
 button{
     border: 5px white;
     background-color:#47c3ff;
@@ -41,6 +47,9 @@ a{
 }
 nav a{
     padding: left 0.5rem; 
+}
+.font-set-weight-normal{
+    font-weight: 400;
 }
 
 .bg-perfect{
