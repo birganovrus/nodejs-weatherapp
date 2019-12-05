@@ -39,7 +39,7 @@ app.get('/weather',(req,res) =>{
                 if(!error){
                     res.send({
                         forecast: forecastData.summary,
-                        status: forecastData.status,
+                        icon: forecastData.state,
                         wind: forecastData.wind + " km/h",
                         temperature: forecastData.temperature + " °C.",
                         humidity: forecastData.humidity * 100 + '%',

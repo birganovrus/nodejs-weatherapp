@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Raleway+Dots);
 
 h1{
     font-family: 'Helvetica';
@@ -27,6 +28,11 @@ h1{
 
 #temperaturetext{
     font-family: 'Montserrat', sans-serif;
+}
+
+#weather-wrapper{
+    position: relative;
+    display: none;
 }
 
 button{
@@ -74,6 +80,77 @@ a:active{
 footer {
     border-top: 1px solid #616060;
 }
+
+/*SUNNY*/
+.sunny { 
+	animation: sunny 15s linear infinite;
+	background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%); 
+	height: 140px;
+	width: 20px; 
+	margin-left: -15px;
+	position: relative;
+	left: 50%;  
+    top: 20px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    display: none;
+}
+.sunny:before {
+	background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+	content: ''; 
+	height: 140px; 
+	width: 20px;
+	opacity: 1; 
+	position: relative;
+	bottom: 0px;
+	left: 0px; 
+	transform: rotate(90deg);
+}
+.sunny:after {
+	background: #FFEE44; 
+	border-radius: 50%; 
+	box-shadow: rgba(255,255,0,0.2) 0 0 0 15px;
+	content: '';  
+	height: 80px;
+	width: 80px;  
+	position: absolute; 
+	left: -30px; 
+	top: 30px;
+}
+@keyframes sunny { 
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+/* CLOUDY */
+.cloudy {
+	animation: cloudy 5s ease-in-out infinite;
+	background: #FFFFFF;
+	border-radius: 50%;
+	box-shadow: 
+		#FFFFFF 65px -15px 0 -5px, 
+		#FFFFFF 25px -25px, 
+		#FFFFFF 30px 10px, 
+		#FFFFFF 60px 14px 0 -10px, 
+		#FFFFFF 85px 5px 0 -5px;
+	height: 50px;
+	width: 50px; 
+	margin-left: -60px;
+	position: relative;
+	left: 50%;
+    top: 20px; 
+    margin-bottom: 40px;
+    margin-top: 20px;
+    display: none;
+}
+@keyframes cloudy {
+	50% { transform: translateY(-20px); }
+}
+@keyframes cloudy_shadow {
+	50% { transform: translateY(20px) scale(1); opacity:.05; }
+}
+
+
 @-webkit-keyframes gradient {
     0%{background-position:26% 0%}
     50%{background-position:75% 100%}

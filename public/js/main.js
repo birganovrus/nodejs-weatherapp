@@ -9,7 +9,6 @@ const TemperatureField = document.querySelector('#temperaturetext')
 //
 const MainThumbnail =  document.querySelector('#MainThumbnail')
 
-const currlocation = ''
 
 const GetWeather = (location)=>{
 fetch('/weather?address=' + location).then((response) =>{
@@ -20,8 +19,25 @@ fetch('/weather?address=' + location).then((response) =>{
         ForecastField.textContent = data.forecast
         ProbabilityField.textContent = 'Probability of rain: ' + data.probability
         TemperatureField.textContent = data.temperature
-        MessageField.textContent = 'Weather in: ' + data.address
+        MessageField.textContent = data.icon
         document.querySelector('#maintext').textContent = data.address
+           
+           switch(data.icon) {
+            case "partly-cloudy-day":
+            case "partly-cloudy-night":
+            case "cloudy":
+                document.getElementById("cloudy").style.display = "block";
+                
+                document.getElementById("sunny").style.display = "none";
+                break;
+
+            case "clear-day":
+            case "clear-night":
+                document.getElementById("sunny").style.display = "block";
+
+                document.getElementById("cloudy").style.display = "none";
+                break;
+            }
         }
     })
 })
@@ -42,6 +58,7 @@ const ChangeImage = (imurl)=>{
     document.getElementById("imgplaceholder").style.backgroundSize = 'cover';
     document.getElementById("imgplaceholder").style.backgroundColor= '#1f21228c';
     document.getElementById("imgplaceholder").style.backgroundBlendMode= 'overlay';
+    document.getElementById("weather-wrapper").style.display = "block";
 
     document.getElementById("maintext").style.color = 'white';
     document.getElementById("maintext").style.fontWeight = '800';
